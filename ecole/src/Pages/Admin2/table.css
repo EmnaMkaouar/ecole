@@ -1,0 +1,48 @@
+.responsive-table{
+background-color: rgba(174, 194, 255, 0.644);
+
+}
+.container{
+    padding-left: 200px;
+    padding-right: 20px;
+    padding-top: 20px;
+    width: 2000px;
+
+    
+}
+
+.cont{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-top: 10px;
+   
+}
+.cont1{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-top: 100px;
+}
+.M{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 45%;
+    top: 40%; 
+    margin-left: -150px;
+    margin-top: -150px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    opacity: 5;
+  
+}
+.add{
+    padding-right: 980px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    height: 30px;
+  
+    
+    
+}
+
