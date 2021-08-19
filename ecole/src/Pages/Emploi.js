@@ -2,7 +2,7 @@
 import { Component } from 'react';
 import NavbarAd from '../component/NavbarAd';
 import { Inject ,ScheduleComponent, Day , Week , WorkWeek, Month , Agenda} from '@syncfusion/ej2-react-schedule'
-import back from '../images/A.jpeg'
+import back from '../images/A4.jpeg'
 import React from 'react';
 class Emploi extends Component {
   

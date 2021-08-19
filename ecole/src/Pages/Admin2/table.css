@@ -3,40 +3,29 @@ background-color: rgba(174, 194, 255, 0.644);
 
 }
 .container{
-    padding-left: 200px;
-    padding-right: 20px;
+    padding-left: 100px;
+    padding-right: 200px;
     padding-top: 20px;
-    width: 2000px;
+    width: 1050px;
 
     
 }
 
-.cont{
+.cont11{
     background-color: #ffffff;
     border-radius: 10px;
-    padding-top: 10px;
+  
    
 }
-.cont1{
+.cont12{
     background-color: #ffffff;
     border-radius: 10px;
     padding-top: 10px;
-    margin-top: 100px;
+    margin-top: 50px;
+    width: 1050px;
 }
-.M{
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    left: 45%;
-    top: 40%; 
-    margin-left: -150px;
-    margin-top: -150px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    opacity: 5;
-  
-}
-.add{
+
+.add1{
     padding-right: 980px;
     padding-left: 30px;
     padding-bottom: 10px;
@@ -45,4 +34,11 @@ background-color: rgba(174, 194, 255, 0.644);
     
     
 }
-
+.cov1 {
+    width: 1000px;
+    height: 100px;
+    margin-left: 330px ;
+    margin-top: 70px ;
+    border-radius: 10px;
+   
+}

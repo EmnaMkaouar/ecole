@@ -35,12 +35,6 @@ export default function User() {
             <button className="btn deep-orange" >تغير</button>
                         
                           
-                            
-                        
-                            
-                        
-                          
-                           
                         
                             
              </div>

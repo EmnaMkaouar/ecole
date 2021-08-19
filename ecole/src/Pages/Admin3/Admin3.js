@@ -4,7 +4,9 @@ import back from "../../images/A4.jpeg"
 import './Admin3.css'
 import ListeItems from "./ListeItems"
 import Cov from '../../images/chan2.jpeg'
+import { Link } from 'react-router-dom'
 class Admin3 extends Component {
+   
  
     constructor(props){
         super(props)
@@ -19,6 +21,7 @@ class Admin3 extends Component {
         this.addItem=this.addItem.bind(this);
         this.deleteItem= this.deleteItem.bind(this);
     }
+    
     handleInput(e){
         this.setState({
             currentItem:{
@@ -74,17 +77,19 @@ class Admin3 extends Component {
         
         <div className="ad  z-depth-5">
         <div className="b">       
-                <a class="waves-effect waves-light btn-large abc">السنة السادسة</a>
-                <a class="waves-effect waves-light btn-large abc"> السنة الخامسة</a>
-                <a class="waves-effect waves-light btn-large abc">السنة الرابعة</a>
-                <a class="waves-effect waves-light btn-large abc"> السنة الثالثة</a>
-                <a class="waves-effect waves-light btn-large abc">السنة الثانية</a>
-                <a class="waves-effect waves-light btn-large abc">السنة الأولى</a>            
+                <Link to="/niv6" class="waves-effect waves-light btn-large abc">السنة السادسة</Link>
+                <Link to="/niv5" class="waves-effect waves-light btn-large abc"> السنة الخامسة</Link>
+                <Link to="/niv4" class="waves-effect waves-light btn-large abc">السنة الرابعة</Link>
+                <Link to="/niv3" class="waves-effect waves-light btn-large abc"> السنة الثالثة</Link>
+                <Link to="/niv2" class="waves-effect waves-light btn-large abc">السنة الثانية</Link>
+                <Link to="/niv1" class="waves-effect waves-light btn-large abc">السنة الأولى</Link>            
         </div>
         <div className="matiere">
                         <form id="to-do" onSubmit={this.addItem}>
                         <button className="btn-floating " type="submit" id="badd" >  <i class="material-icons">add</i></button>
                             <input className="in" type="text" placeholder="أدخل مادة جديدة.." value={this.state.currentItem.text} onChange={this.handleInput}/>
+                            
+
                    
                             
                         </form>
@@ -92,11 +97,11 @@ class Admin3 extends Component {
         </div>
         
             <ListeItems items={this.state.items} deleteItem={this.deleteItem}></ListeItems>
+         
+        
+        
+        
         </div>
-        
-        
-        
-        
         </div>
     )
         }

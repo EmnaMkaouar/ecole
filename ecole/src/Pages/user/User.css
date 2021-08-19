@@ -6,17 +6,21 @@
     border-radius: 10px;
     height: 300px;
     margin-top: 20px;
+    margin-right: 100px;
+    margin-left: 80px;
     
 }
 .edit{
     direction: rtl;
-    width: 700px;
+    width: 500px;
     height: 500px;
     margin-top: 20px;
     border-radius: 10px;
     background-color: white;
     display: inline;
     padding-right: 40px;
+    margin-left: 100px;
+    
     
     
 }

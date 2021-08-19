@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import './table.css'
-
+import Cov from '../../images/prof2.jpeg'
 import NavbarAd from '../../component/NavbarAd'
 import back from '../../images/A4.jpeg'
 import data from './mock-data.json'
@@ -96,7 +96,7 @@ const Admin2 = () => {
       newContacts.splice(index,1);
       setContacts(newContacts);
     }
-    const[modalIsOpen, setmodalIsOpen]=useState(false)
+    
     return (
         <div style={{
             backgroundImage: 'url('+back+')',
@@ -106,8 +106,15 @@ const Admin2 = () => {
            
             }}>
         <NavbarAd/>
+        <div className="cov1 z-depth-5" style ={
+            {backgroundImage:'url('+Cov+')',
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "0% 50%",
+            backgroundSize:"100% 340%"}
+        }>
+        </div>
         <div className="container section">
-          <div className="cont1 z-depth-5 ">
+          <div className="cont12 z-depth-5 ">
          
                           <form className="center" onSubmit={handleAddFromSubmit}>
                          
@@ -146,9 +153,9 @@ const Admin2 = () => {
        
         
         <div class="container section">
-        <div class='cont'>
+        <div class='cont11'>
         
-        <div className="add">
+        <div className="add1">
         
    
      </div>  
