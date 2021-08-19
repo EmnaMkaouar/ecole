@@ -21,7 +21,7 @@ function App() {
   return (
     
     <BrowserRouter>
-    <Etudient/>
+    
     <Route exact path='/'>
     <Home/>
     </Route>
