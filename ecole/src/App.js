@@ -13,17 +13,34 @@ import Niv5 from './Pages/Admin3/Niv5';
 import Niv6 from './Pages/Admin3/Niv6';
 import Admin4 from './Pages/Admin4/Admin4';
 import Admin5 from './Pages/Prof+Matiere/Admin5';
-//import Login from './Pages/Login/Login'
+import Login from './Pages/Login/Login'
+import LoginProf from './Pages/Login/LoginProf'
 //import En1 from './Pages/En1/En1';
-//import HomeEn from './Pages/HomeEn'
+import HomeEn from './Pages/HomeEn'
+import ClasseEn from './Pages/ClasseEn/ClasseEn'
+import Welcome from './Pages/Welcome';
 import Etudient from './Pages/Etudient/Etudient';
+import Presence from './Pages/ClasseEn/Presence/Presence';
+import UserProf from './Pages/user/UserProf'
 function App() {
   return (
     
     <BrowserRouter>
-    
+
     <Route exact path='/'>
-    <Home/>
+    <Welcome/>
+    </Route>
+    <Route path="/LogAdmin">
+    <Login/>
+    </Route>
+    <Route path="/LogProf">
+      <LoginProf/>
+    </Route>
+    <Route path="/HomeAdmin">
+      <Home/>
+    </Route>
+    <Route path="/HomeProf">
+      <HomeEn/>
     </Route>
       <Route path="/TP">
         <Admin2/>
@@ -60,6 +77,21 @@ function App() {
       </Route>
       <Route path="/PM">
         <Admin5/>
+      </Route>
+      <Route path="/HE">
+        <HomeEn/>
+      </Route>
+      <Route path="/Etudiant">
+        <Etudient/>
+      </Route>
+      <Route path="/Pr">
+      <ClasseEn/>
+      </Route>
+      <Route path="/Presence">
+        <Presence/>
+      </Route>
+      <Route path="/userP">
+        <UserProf/>
       </Route>
       
      

@@ -35,7 +35,7 @@ componentDidMount() {
             <nav>
     <div class="nav-wrapper ">
     <Link data-target="slide-out" className="sidenav-trigger  show-on-large"><i className="material-icons menu">menu</i></Link>
-    <Link to="/" className="brand-logo center black-text navbar-close"> المدرسة الابتدائية الأمل</Link>
+    <Link to="/HE" className="brand-logo center black-text navbar-close"> المدرسة الابتدائية الأمل</Link>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
       <li><a class="dropdown-trigger"  href="#!" data-target="dropdown1"><li><img src={admin}alt="" className="topAvatar" /></li></a></li>
@@ -52,15 +52,15 @@ componentDidMount() {
       <a href="#name"><span classNameName="white-text name">John Doe</span></a>
       <a href="#email"><span classNameName="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
-    <li><Link className="waves-effect sidenav-close" to="/"><i className="material-icons">business_center</i>إحصائيّات</Link></li>
+    <li><Link className="waves-effect sidenav-close" to="/HE"><i className="material-icons">business_center</i>إحصائيّات</Link></li>
     <li><div className="divider"></div></li>
-    <li><Link className="waves-effect sidenav-close " to='/Em'><i className="material-icons">edit</i> جدول أوقاتي </Link></li>
+    <li><Link className="waves-effect sidenav-close " ><i className="material-icons">edit</i> جدول أوقاتي </Link></li>
     <li><div className="divider"></div></li>
-    <li><a className="waves-effect" href="#!"><i className="material-icons">people</i> الحضور</a></li>
+    <li><Link  className="waves-effect sidenav-close" to="/Pr"><i className="material-icons">people</i> الحضور</Link></li>
     <li><div className="divider"></div></li>
-    <li><Link className="waves-effect sidenav-close" to='/M'><i className="material-icons">edit</i>التصرف في التلاميذ</Link></li>
+    <li><Link className="waves-effect sidenav-close" to='/Etudiant'><i className="material-icons">edit</i>التصرف في التلاميذ</Link></li>
     <li><div className="divider"></div></li>
-    <li><Link className="waves-effect sidenav-close" to="/user"> <i className="material-icons">contact_mail</i>المعلومات الشّخصيّة</Link></li>
+    <li><Link className="waves-effect sidenav-close" to="/userP"> <i className="material-icons">contact_mail</i>المعلومات الشّخصيّة</Link></li>
     
   </ul>
   

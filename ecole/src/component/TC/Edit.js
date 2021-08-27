@@ -16,9 +16,9 @@ const Edit = ({
         <input
           type="text"
           required="required"
-          placeholder="Enter an annee..."
-          name="annee"
-          value={editFormData.annee}
+          placeholder="Enter an schoolYear..."
+          name="schoolYear"
+          value={editFormData.schoolYear}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -26,9 +26,9 @@ const Edit = ({
         <input
           type="text"
           required="required"
-          placeholder="Enter a  nb..."
-          name="nb"
-          value={editFormData.nb}
+          placeholder="Enter a  number..."
+          name="number"
+          value={editFormData.number}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -37,8 +37,8 @@ const Edit = ({
           type="text"
           required="required"
           placeholder="Enter an name..."
-          name="nom"
-          value={editFormData.nom}
+          name="name"
+          value={editFormData.name}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -48,8 +48,8 @@ const Edit = ({
           type="text"
           required="required"
           placeholder="Enter a name..."
-          name="Niveau"
-          value={editFormData.Niveau}
+          name="level"
+          value={editFormData.level}
           onChange={handleEditFormChange}
         ></input>
       </td>

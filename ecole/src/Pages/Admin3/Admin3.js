@@ -5,8 +5,9 @@ import './Admin3.css'
 import ListeItems from "./ListeItems"
 import Cov from '../../images/chan2.jpeg'
 import { Link } from 'react-router-dom'
+
 class Admin3 extends Component {
-   
+ 
  
     constructor(props){
         super(props)
@@ -77,12 +78,12 @@ class Admin3 extends Component {
         
         <div className="ad  z-depth-5">
         <div className="b">       
-                <Link to="/niv6" class="waves-effect waves-light btn-large abc">السنة السادسة</Link>
-                <Link to="/niv5" class="waves-effect waves-light btn-large abc"> السنة الخامسة</Link>
-                <Link to="/niv4" class="waves-effect waves-light btn-large abc">السنة الرابعة</Link>
-                <Link to="/niv3" class="waves-effect waves-light btn-large abc"> السنة الثالثة</Link>
-                <Link to="/niv2" class="waves-effect waves-light btn-large abc">السنة الثانية</Link>
-                <Link to="/niv1" class="waves-effect waves-light btn-large abc">السنة الأولى</Link>            
+                <Link to="/niv6" className="waves-effect waves-light btn-large abc">السنة السادسة</Link>
+                <Link to="/niv5" className="waves-effect waves-light btn-large abc"> السنة الخامسة</Link>
+                <Link to="/niv4" className="waves-effect waves-light btn-large abc">السنة الرابعة</Link>
+                <Link to="/niv3" className="waves-effect waves-light btn-large abc"> السنة الثالثة</Link>
+                <Link to="/niv2" className="waves-effect waves-light btn-large abc">السنة الثانية</Link>
+                <Link to="/niv1" className="waves-effect waves-light btn-large abc">السنة الأولى</Link>            
         </div>
         <div className="matiere">
                         <form id="to-do" onSubmit={this.addItem}>

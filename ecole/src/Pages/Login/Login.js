@@ -3,10 +3,12 @@ import img from '../../images/try.png'
 import back from '../../images/A.jpeg'
 import log from '../../images/B4.jpeg'
 import './login.css'
+import {Link} from 'react-router-dom'
 import Navbar from '../../component/Navbar'
 const Login = () => {
     return (
         <div className="row " >
+        
         <div style={{
             backgroundImage: 'url('+back+')',
             backgroundSize: "cover",
@@ -24,7 +26,7 @@ const Login = () => {
                 <div className="card-action ">
                     <i className="medium material-icons g">account_circle</i> 
                     <br/>
-                <h6> المدرّسون</h6>
+                <h6> الإدارة</h6>
                 </div>
                 <div className="card-content">
                     <div className="form-field ">
@@ -37,7 +39,7 @@ const Login = () => {
                     <input id="password" type="password" className="validate"></input>
                     </div>
                     <div className="form-field">
-                        <button className="btn-large   center-align">دخول</button>
+                        <Link to="/HomeAdmin"className="btn-large   center-align" >دخول</Link>
                     </div>
                </div>
        

@@ -13,10 +13,10 @@ const Admin4 = () => {
 const [contacts, setContacts]=useState(data);
 const [addFormData, setAddFromData]=useState(
   {
-    Niveau:"",
-    nom:"",
-    nb:"",
-    annee:"",
+    level:"",
+    name:"",
+    number:"",
+    schoolYear:"",
 
 
   });
@@ -32,10 +32,10 @@ const [addFormData, setAddFromData]=useState(
    };
    const [editFormData, setEditFormData] = useState(
      {
-       Niveau:"",
-       nom:"",
-       nb:"",
-       annee:"",
+       level:"",
+       name:"",
+       number:"",
+       schoolYear:"",
      });
 
      const handleEditFormChange=(event)=>{
@@ -51,10 +51,10 @@ const [addFormData, setAddFromData]=useState(
      event.preventDefault();
      const newContact ={
        id: nanoid(),
-       Niveau: addFormData.Niveau,
-       nom: addFormData.nom,
-       nb: addFormData.nb,
-       annee: addFormData.annee,
+       level: addFormData.level,
+       name: addFormData.name,
+       number: addFormData.number,
+       schoolYear: addFormData.schoolYear,
      };
      const newContacts =[ ...contacts, newContact]
      setContacts(newContacts);
@@ -63,10 +63,10 @@ const [addFormData, setAddFromData]=useState(
      event.preventDefault();
      const editedContact ={
        id : editContactId,
-       Niveau: editFormData.Niveau,
-       nom: editFormData.nom,
-       nb: editFormData.nb,
-       annee : editFormData.annee,
+       level: editFormData.level,
+       name: editFormData.name,
+       number: editFormData.number,
+       schoolYear : editFormData.schoolYear,
      };
      const newContacts=[...contacts];
      const index= contacts.findIndex((contact)=>contact.id === editContactId);
@@ -78,10 +78,10 @@ const [addFormData, setAddFromData]=useState(
      events.preventDefault();
      setEditContactId(contact.id);
      const formValues={
-       Niveau: contact.Niveau,
-       nom: contact.nom,
-       nb: contact.nb,
-       annee: contact.annee,
+       level: contact.level,
+       name: contact.name,
+       number: contact.number,
+       schoolYear: contact.schoolYear,
      }
      setEditFormData(formValues);
    };
@@ -123,16 +123,16 @@ const [addFormData, setAddFromData]=useState(
                            
                            
                          <td style={{width:"600px"}}>
-                           <input  style={{width:"250px" , direction:"rtl", borderColor:"orangered"}}  type="text" name="annee" required="requird" placeholder="	السنة الدراسية.."onChange={handleAddFormChange}/>
+                           <input  style={{width:"250px" , direction:"rtl", borderColor:"orangered"}}  type="text" name="schoolYear" required="requird" placeholder="	السنة الدراسية.."onChange={handleAddFormChange}/>
                          </td>
                          <td style={{width:"600px"}}>
-                           <input  style={{width:"200px", direction:"rtl", borderColor:"orangered"}}   type="text" name="nb" required="requird" placeholder="	عدد التلاميذ.." onChange={handleAddFormChange} />
+                           <input  style={{width:"200px", direction:"rtl", borderColor:"orangered"}}   type="text" name="number" required="requird" placeholder="	عدد التلاميذ.." onChange={handleAddFormChange} />
                            </td>
                            <td style={{width:"600px"}}>
-                           <input style={{width:"200px" , direction:"rtl" , borderColor:"orangered"}} type="text" name="nom" required="requird" placeholder="	إسم القسم.." onChange={handleAddFormChange}/>
+                           <input style={{width:"200px" , direction:"rtl" , borderColor:"orangered"}} type="text" name="name" required="requird" placeholder="	إسم القسم.." onChange={handleAddFormChange}/>
                          </td>
                          <td style={{width:"600px"}}>
-                           <input   style={{width:"200px", direction:"rtl", borderColor:"orangered"}} type="text" name="Niveau" required="requird" placeholder="المستوى.." onChange={handleAddFormChange}/>   
+                           <input   style={{width:"200px", direction:"rtl", borderColor:"orangered"}} type="text" name="level" required="requird" placeholder="المستوى.." onChange={handleAddFormChange}/>   
                            </td>
                          
                            

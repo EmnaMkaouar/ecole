@@ -17,10 +17,10 @@ const Read = ({ contact, handleEditClick, handleDeleteClick }) => {
         </button>
       </td>
       
-      <td>{contact.annee}</td>
-      <td>{contact.nb} </td>
-      <td>{contact.nom}</td>
-      <td>{contact.Niveau}</td>
+      <td>{contact.schoolYear}</td>
+      <td>{contact.number} </td>
+      <td>{contact.name}</td>
+      <td>{contact.level}</td>
       
       
       

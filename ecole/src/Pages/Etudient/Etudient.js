@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import './tableEt.css'
-import Cov from '../../images/prof2.jpeg'
+import Cov from '../../images/et.jpeg'
 import NavbarEn from '../../component/NavbarEn'
 import back from '../../images/A4.jpeg'
 import data from './mock-dataet.json'
@@ -106,15 +106,15 @@ const Etudient = () => {
            
             }}>
             <NavbarEn/>
-        <div className="cov1 z-depth-5" style ={
+        <div className="cov123 z-depth-5" style ={
             {backgroundImage:'url('+Cov+')',
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "0% 50%",
+            backgroundPosition: "0% 55%",
             backgroundSize:"100% 340%"}
         }>
         </div>
         <div className="container section ">
-          <div className="cont12 z-depth-5 ">
+          <div className="cont123 z-depth-5 ">
          
                           <form className="center" onSubmit={handleAddFromSubmit}>
                          
@@ -153,9 +153,9 @@ const Etudient = () => {
        
         
         <div class="container section">
-        <div class='cont11'>
+        <div class='cont1123'>
         
-        <div className="add1">
+        <div className="add123">
         
    
      </div>  
