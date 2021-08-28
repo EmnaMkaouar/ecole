@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      
+      "name": "Ali",
+      "schoolYear": "2020-2021"
+    },
+    {
+      "id": 2,
+      
+      "name": "Mohamed",
+      "schoolYear": "2020-2021"
+    
+    },
+    
+    {
+      "id": 2,
+     
+      "name": "Ahmed",
+      "schoolYear": "2020-2021"
+    
+    },
+    {
+      "id": 2,
+      
+      "name": "Nour",
+      "schoolYear": "2020-2021"
+      
+    }
+    
+  ]
