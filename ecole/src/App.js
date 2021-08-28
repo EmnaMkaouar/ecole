@@ -1,27 +1,28 @@
 
-import Admin2 from './Pages/Admin2/Admin2';
-import Emploi from './Pages/Emploi';
+import Prof from './Pages/LesProfs(التصرف في  المدرسين )/Profs';
+import Emploi from './Pages/LesEmploisDesProfs( التّصرّف في جدول الأوقات)/Emploi';
 import { BrowserRouter, Route} from 'react-router-dom';
-import Admin3 from "./Pages/Admin3/Admin3";
-import Home from './Pages/Home';
-import User from './Pages/user/User'
-import Niv1 from './Pages/Admin3/Niv1';
-import Niv2 from './Pages/Admin3/Niv2';
-import Niv3 from './Pages/Admin3/Niv3';
-import Niv4 from './Pages/Admin3/Niv4';
-import Niv5 from './Pages/Admin3/Niv5';
-import Niv6 from './Pages/Admin3/Niv6';
-import Admin4 from './Pages/Admin4/Admin4';
-import Admin5 from './Pages/Prof+Matiere/Admin5';
-import Login from './Pages/Login/Login'
-import LoginProf from './Pages/Login/LoginProf'
-//import En1 from './Pages/En1/En1';
-import HomeEn from './Pages/HomeEn'
+import Matiere from "./Pages/Matiere( التّصرّف في المواد)/Matiere";
+import Home from './Pages/Home(إحصائيّات)/Home';
+import HomeEn from './Pages/Home(إحصائيّات)/HomeEn'
+import Niv1 from './Pages/Matiere( التّصرّف في المواد)/Niv1';
+import Niv2 from './Pages/Matiere( التّصرّف في المواد)/Niv2';
+import Niv3 from './Pages/Matiere( التّصرّف في المواد)/Niv3';
+import Niv4 from './Pages/Matiere( التّصرّف في المواد)/Niv4';
+import Niv5 from './Pages/Matiere( التّصرّف في المواد)/Niv5';
+import Niv6 from './Pages/Matiere( التّصرّف في المواد)/Niv6';
+import Classes from './Pages/LesClasses( التصرف في الأقسام )/Classes';
+import AffectationProf from './Pages/AffectationProf(تعيين المدرّسين)/AffectationProf';
+import Login from './Pages/Login(دخول)/Login'
+import LoginProf from './Pages/Login(دخول)/LoginProf'
 import ClasseEn from './Pages/ClasseEn/ClasseEn'
-import Welcome from './Pages/Welcome';
-import Etudient from './Pages/Etudient/Etudient';
-import Presence from './Pages/ClasseEn/Presence/Presence';
-import UserProf from './Pages/user/UserProf'
+import Welcome from './Pages/Welcome/Welcome';
+import Etudient from './Pages/Etudient(التصرف في التلاميذ )/Etudient';
+import Presence from './Pages/ClasseEn/Seance/Presence';
+import UserProf from './Pages/user( المعلومات الشّخصيّة )/UserProf'
+import ProfEmp from './Pages/LesEmploisDesProfs( التّصرّف في جدول الأوقات)/TableauProfEmp';
+import UserAd from './Pages/user( المعلومات الشّخصيّة )/UserAd';
+import EmploiP from './Pages/ProfEmploi(جدول أوقاتي)/EmploiP';
 function App() {
   return (
     
@@ -43,16 +44,19 @@ function App() {
       <HomeEn/>
     </Route>
       <Route path="/TP">
-        <Admin2/>
+        <Prof/>
       </Route>
       <Route path="/Em">
+        <ProfEmp/>
+      </Route>
+      <Route path="/EmP">
         <Emploi/>
       </Route>
       <Route path="/M">
-      <Admin3/>
+      <Matiere/>
       </Route>
       <Route path="/user">
-      <User/>
+      <UserAd/>
       </Route>
       <Route path="/niv1">
         <Niv1/>
@@ -73,10 +77,10 @@ function App() {
         <Niv6/>
       </Route>
       <Route path="/TE">
-        <Admin4/>
+        <Classes/>
       </Route>
       <Route path="/PM">
-        <Admin5/>
+        <AffectationProf/>
       </Route>
       <Route path="/HE">
         <HomeEn/>
@@ -92,6 +96,9 @@ function App() {
       </Route>
       <Route path="/userP">
         <UserProf/>
+      </Route>
+      <Route path="/EmProf">
+        <EmploiP/>
       </Route>
       
      

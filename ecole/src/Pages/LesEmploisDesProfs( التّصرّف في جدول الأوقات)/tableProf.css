@@ -1,0 +1,33 @@
+.responsive-table{
+    background-color: rgba(174, 194, 255, 0.644);
+    
+    }
+    
+    
+    .contProf{
+        background-color: #ffffff;
+        border-radius: 10px;
+        
+       
+    }
+
+    
+    .addProf{
+        padding-right: 980px;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        height: 30px;
+      
+        
+        
+    }
+    .covProf {
+        width: 1000px;
+        height: 100px;
+        margin-left: 330px ;
+        margin-top: 70px ;
+        border-radius: 10px;
+        margin-bottom: 20px;
+       
+    }
+    

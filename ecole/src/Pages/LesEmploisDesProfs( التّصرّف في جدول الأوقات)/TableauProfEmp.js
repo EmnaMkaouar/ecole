@@ -1,15 +1,15 @@
 import React, { Fragment, useState } from 'react'
-import './table5.css'
-import Cov from '../../images/cl.jpeg'
-import NavbarEn from '../../component/Navbar/NavbarEn'
+import './tableProf.css'
+import Cov from '../../images/teams.jpeg'
+import NavbarAd from '../../component/Navbar/NavbarAd'
 import back from '../../images/A4.jpeg'
-import data from './mock5-data.json'
+import data from './mockEm-data.json'
 
 import  Read  from './Read'
 
 
 
-const ClasseEn = () => {
+const ProfEmp = () => {
 const [contacts]=useState(data);
 
   
@@ -27,11 +27,11 @@ const [contacts]=useState(data);
           
           
            }}>
-       <NavbarEn/>
-       <div className="cov134 z-depth-5" style ={
+       <NavbarAd/>
+       <div className="covProf z-depth-5" style ={
             {backgroundImage:'url('+Cov+')',
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "0% 55%",
+            backgroundPosition: "0% 65%",
             backgroundSize:"100% 340%"}
         }>
         </div>
@@ -39,9 +39,9 @@ const [contacts]=useState(data);
       
        
        <div class="container section">
-       <div class='cont321'>
+       <div class='contProf'>
        
-       <div className="add23">
+       <div className="addProf">
        
   
        </div>  
@@ -51,7 +51,7 @@ const [contacts]=useState(data);
           <tr className="center">
         
            <th className="center"> 	السنة الدراسية</th>      
-           <th className="center"> 	إسم القسم </th>        
+           <th className="center"> 	إسم المدرس</th>        
           
              
                
@@ -86,4 +86,4 @@ const [contacts]=useState(data);
    )
 }
 
-export default ClasseEn
+export default ProfEmp
