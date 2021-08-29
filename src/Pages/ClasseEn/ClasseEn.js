@@ -1,19 +1,24 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState ,useEffect } from 'react'
 import './table5.css'
 import Cov from '../../images/cl.jpeg'
 import NavbarEn from '../../component/NavbarEn'
 import back from '../../images/A4.jpeg'
-import data from './mock5-data.json'
-
+import { ClasseAPI } from '../../api/classe.api'
 import  Read  from './Read'
 
 
 
 const Admin4 = () => {
-const [contacts]=useState(data);
+const [classes, setClasses]=useState([]);
 
-  
-   
+//get
+useEffect(() => {
+    const fetchAll = async () => {
+       const data = await ClasseAPI.getAll();
+       setClasses(data);
+     }
+     fetchAll();
+    }, [])
     
    
    
@@ -58,11 +63,11 @@ const [contacts]=useState(data);
           </tr>
           </thead>
          <tbody>
-         {contacts.map((contact)=>(
+         {classes.map((classe)=>(
           <Fragment>
           {  
           ( <Read 
-              contact={contact} 
+              classe={classe} 
               
               />
           )}

@@ -1,7 +1,6 @@
 import React from "react";
 
-
-const Read = ({ contact, handleCancelClick }) => {
+const Read = ({ student, handleCancelClick }) => {
   return (
     <tr>
 
@@ -10,21 +9,19 @@ const Read = ({ contact, handleCancelClick }) => {
         <form action="#">
           
             <label>
-              <input name="group1" type="radio" checked />
+              <input name="group1" type="radio" checked={student.checked == undefined?true:false} />
               <span>P</span>
             </label>
          
             <label>
-              <input class="abscent" name="group1" type="radio"  />
+              <input name="group1" type="radio" checked={student.checked == undefined?false:true} />
               <span>A</span>
             </label>
         </form>
       </td>
 
-      <td>{contact.fullName}</td>
-      <td>{contact.Number}</td>
-
-
+      <td>{student.firstName} {student.lastName}</td>
+      <td>{student.id}</td>
 
     </tr>
   );

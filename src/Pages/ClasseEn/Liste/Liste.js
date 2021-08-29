@@ -1,21 +1,48 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import './tableListe.css'
-
-import data from './mockListe-data.json'
-
+import { StudentAPI } from '../../../api/student.api'
+import { AbsenceAPI } from '../../../api/absence.api'
 import Read from './Read'
-import Edit from './Edit'
 import { Container, DatePicker, Select } from 'react-materialize'
 import moment from 'moment'
 
 
-const Liste = () => {
-  
+const Liste = ({ classId }) => {
+
   const [date, setDate] = useState(new Date());
   //state = { date: new Date().toLocaleDateString()};
-  const [contacts, setContacts] = useState(data);
+  const [students, setStudents] = useState([]);
 
-  const [editContactId, setEditContactId] = useState(null);
+  //get all absences by class and date and hours
+  useEffect(() => {
+    const fetchAllByDateAndHourAndClasse = async () => {
+      const absenceList = await AbsenceAPI.getAbsenceByDateAndHourAndClasse("2021-08-08", "10:00", "11:00", classId);
+
+
+
+      //get All student By classe
+      
+        const fetchAll = async () => {
+          const allStudentByClass = await StudentAPI.getAllByClasse(classId);
+          for(let student of allStudentByClass){
+            for(let absentStudent of absenceList){
+              if(student.id === absentStudent.studentId){
+                student["checked"] = false;
+                break;
+              }
+            
+            }
+          }
+          setStudents(allStudentByClass);
+        }
+        fetchAll();
+
+    }
+    fetchAllByDateAndHourAndClasse();
+  }, [])
+
+
+
 
   const [editFormData, setEditFormData] = useState(
     {
@@ -24,46 +51,6 @@ const Liste = () => {
       Number: "",
       date: "",
     });
-
-  const handleEditFormChange = (event) => {
-    event.preventDefault();
-    const fieldName = event.target.getAttribute("name");
-    const fieldValue = event.target.value;
-    const newFormData = { ...editFormData };
-    newFormData[fieldName] = fieldValue;
-    setEditFormData(newFormData);
-  };
-
-
-  const handleEditFromSubmit = (event) => {
-    event.preventDefault();
-    const editedContact = {
-      id: editContactId,
-      fullName: editFormData.fullName,
-      classe: editFormData.classe,
-      Number: editFormData.Number,
-      date: editFormData.date,
-    };
-    const newContacts = [...contacts];
-    const index = contacts.findIndex((contact) => contact.id === editContactId);
-    newContacts[index] = editedContact;
-    setContacts(newContacts);
-    setEditContactId(null)
-  };
-  const handleEditClick = (events, contact) => {
-    events.preventDefault();
-    setEditContactId(contact.id);
-    const formValues = {
-      fullName: contact.fullName,
-      classe: contact.classe,
-      Number: contact.Number,
-      date: contact.date,
-    }
-    setEditFormData(formValues);
-  };
-  const handleCancelClick = () => {
-    setEditContactId(null);
-  }
 
 
   return (
@@ -99,7 +86,7 @@ const Liste = () => {
 
 
           </div>
-          <form onSubmit={handleEditFromSubmit}>
+          <form>
             <table className="striped z-depth-5 ">
               <thead>
                 <tr>
@@ -111,12 +98,11 @@ const Liste = () => {
                 </tr>
               </thead>
               <tbody>
-                {contacts.map((contact) => (
+                {students.map((student) => (
                   <Fragment>
                     {
                       (<Read
-                        contact={contact}
-                        handleEditClick={handleEditClick}
+                        student={student}
 
                       />
                       )}

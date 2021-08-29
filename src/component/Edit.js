@@ -18,20 +18,20 @@ const Edit = ({
         <input
           type="text"
           required="required"
-          placeholder="Enter an MDP..."
-          name="MDP"
-          value={editFormData.MDP}
+          placeholder="Enter an password..."
+          name="password"
+          value={editFormData.password}
           onChange={handleEditFormChange}
         ></input>
       </td>
       
       <td>
         <input
-          type="email"
+          type="text"
           required="required"
-          placeholder="Enter an email..."
-          name="email"
-          value={editFormData.email}
+          placeholder="Enter an login..."
+          name="login"
+          value={editFormData.login}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -41,8 +41,8 @@ const Edit = ({
           type="text"
           required="required"
           placeholder="Enter a name..."
-          name="fullName"
-          value={editFormData.fullName}
+          name="firstName"
+          value={editFormData.firstName}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -50,9 +50,9 @@ const Edit = ({
         <input
           type="text"
           required="required"
-          placeholder="Enter a  number..."
-          name="Number"
-          value={editFormData.Number}
+          placeholder="Enter a  id..."
+          name="id"
+          value={editFormData.id}
           onChange={handleEditFormChange}
         ></input>
       </td>

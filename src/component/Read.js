@@ -1,6 +1,6 @@
 import React from "react";
 
-const Read = ({ contact, handleEditClick, handleDeleteClick }) => {
+const Read = ({ contact, handleEditClick, handleDeleteClick , deleteTeacher }) => {
   return (
     <tr>
      <td>
@@ -14,11 +14,11 @@ const Read = ({ contact, handleEditClick, handleDeleteClick }) => {
         <i class="material-icons">delete</i>
         </button>
       </td>
-      <td>{contact.MDP}</td>
-      <td>{contact.email}</td>
-      <td>{contact.fullName}</td>
-      <td>{contact.Number}</td>
-      
+      <td>{contact.password}</td>
+      <td>{contact.login}</td>
+      <td>{contact.firstName}</td>
+      <td>{contact.id}</td>
+     
       
      
     </tr>
