@@ -11,8 +11,8 @@ const Edit = ({
             type="text"
             required="required"
             placeholder="Enter a name..."
-            name="idProf"
-            value={editFormData.idProf}
+            name="teacherId"
+            value={editFormData.teacherId}
             onChange={handleEditFormChange}
           ></input>
         </div>
@@ -21,8 +21,8 @@ const Edit = ({
             type="text"
             required="required"
             placeholder="Enter an name..."
-            name="idClasse"
-            value={editFormData.idClasse}
+            name="classeId"
+            value={editFormData.classeId}
             onChange={handleEditFormChange}
           ></input>
         </div>
@@ -30,9 +30,9 @@ const Edit = ({
           <input
             type="text"
             required="required"
-            placeholder="Enter a  idMat..."
-            name="idMat"
-            value={editFormData.idMat}
+            placeholder="Enter a  subjectId..."
+            name="subjectId"
+            value={editFormData.subjectId}
             onChange={handleEditFormChange}
           ></input>
         </div>
@@ -41,9 +41,9 @@ const Edit = ({
           <input
             type="text"
             required="required"
-            placeholder="Enter an annee..."
-            name="annee"
-            value={editFormData.annee}
+            placeholder="Enter a schoolYear..."
+            name="schoolYear"
+            value={editFormData.schoolYear}
             onChange={handleEditFormChange}
           ></input>
         </div>

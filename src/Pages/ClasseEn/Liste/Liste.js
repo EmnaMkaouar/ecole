@@ -10,16 +10,34 @@ import moment from 'moment'
 const Liste = ({ classId }) => {
 
   const [date, setDate] = useState(new Date());
+
+  const [hour, setHour] = useState(0)
+  
+  const hours = [
+    {hourBegin:"08:00", hourEnd: "10:00"},
+    {hourBegin:"10:00", hourEnd: "12:00"},
+    {hourBegin:"14:00", hourEnd: "16:00"},
+    {hourBegin:"16:00", hourEnd: "18:00"},
+  ]
+  
+  function onSelectHours(e){
+    setHour(e.target.value);
+    //todo recall fetchAllByDateAndHourAndClasse with the new params
+  }
+
+
+  function onChangeDate(e){
+    alert(e.target)
+  }
+  
+
   //state = { date: new Date().toLocaleDateString()};
   const [students, setStudents] = useState([]);
 
   //get all absences by class and date and hours
   useEffect(() => {
     const fetchAllByDateAndHourAndClasse = async () => {
-      const absenceList = await AbsenceAPI.getAbsenceByDateAndHourAndClasse("2021-08-08", "10:00", "11:00", classId);
-
-
-
+      const absenceList = await AbsenceAPI.getAbsenceByDateAndHourAndClasse(date,hours[hour].hourBegin, hours[hour].hourEnd, classId);
       //get All student By classe
       
         const fetchAll = async () => {
@@ -27,7 +45,7 @@ const Liste = ({ classId }) => {
           for(let student of allStudentByClass){
             for(let absentStudent of absenceList){
               if(student.id === absentStudent.studentId){
-                student["checked"] = false;
+                student["absent"] = true;
                 break;
               }
             
@@ -39,7 +57,7 @@ const Liste = ({ classId }) => {
 
     }
     fetchAllByDateAndHourAndClasse();
-  }, [])
+  }, [hour, date])
 
 
 
@@ -56,11 +74,11 @@ const Liste = ({ classId }) => {
   return (
     <div>
       <div class="input-field col s12 ">
-        <Select>
-          <option value="8-10" selected>8-10!</option>
-          <option value="10-12">10-12</option>
-          <option value="14-16">14-16</option>
-          <option value="16-18">16-18</option>
+        <Select onChange={onSelectHours} value={hour}>
+          <option value="0">8-10</option>
+          <option value="1">10-12</option>
+          <option value="2">14-16</option>
+          <option value="3">16-18</option>
         </Select>
 
       </div>
@@ -68,7 +86,10 @@ const Liste = ({ classId }) => {
       <Container>
         <p className="flow-text">Date: </p>
         <DatePicker
-          value={moment(date).format("MM-DD-YYYY")}
+          value={moment(date).format("YYYY-DD-MM")}
+          onChange = {(newValue) => {
+            setDate(moment(newValue).format("YYYY-DD-MM"));
+          }}
         ></DatePicker>
 
 
@@ -103,7 +124,11 @@ const Liste = ({ classId }) => {
                     {
                       (<Read
                         student={student}
-
+                        date = {date}
+                        hourBegin = {hours[hour].hourBegin}
+                        hourEnd = {hours[hour].hourEnd}
+                        isAbsent = {student.absent == undefined? false: true}
+                      
                       />
                       )}
 

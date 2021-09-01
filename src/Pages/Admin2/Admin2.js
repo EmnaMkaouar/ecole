@@ -8,7 +8,6 @@ import Read from '../../component/Read'
 import Edit from '../../component/Edit'
 import { TeacherAPI } from '../../api/teacher.api'
 
-// import { TeacherDTO } from "./dto/teacher.dto";
 
 
 const Admin2 = () => {

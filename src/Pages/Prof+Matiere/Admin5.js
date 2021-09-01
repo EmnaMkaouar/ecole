@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState , useEffect} from 'react'
 import './table2.css'
 import Cov from '../../images/prof.jpeg'
 import NavbarAd from '../../component/NavbarAd'
@@ -7,16 +7,27 @@ import data from './mock3-data.json'
 import{nanoid} from 'nanoid'
 import  Read  from './Read'
 import Edit  from './Edit'
-
+import {TeacherAssignmentAPI} from "../../api/teacher-assignment.api"
 
 const Admin5 = () => {
-const [contacts, setContacts]=useState(data);
+  const [contacts, setContacts] = useState(data)
+
+// //get
+//    useEffect(() => {
+//     const fetchAll = async () => {
+//        const data = await TeacherAssignmentAPI.getAll();
+//        setContacts(data);
+//      }
+//      fetchAll();
+//     }, [])
+
+
 const [addFormData, setAddFromData]=useState(
   {
-    idProf:"",
-    idClasse:"",
-    idMat:"",
-    annee:"",
+    teacherId:"",
+    classeId:"",
+    subjectId:"",
+    schoolYear:"",
 
 
   });
@@ -32,10 +43,10 @@ const [addFormData, setAddFromData]=useState(
    };
    const [editFormData, setEditFormData] = useState(
      {
-       idProf:"",
-       idClasse:"",
-       idMat:"",
-       annee:"",
+       teacherId:"",
+       classeId:"",
+       subjectId:"",
+       schoolYear:"",
      });
 
      const handleEditFormChange=(event)=>{
@@ -51,10 +62,10 @@ const [addFormData, setAddFromData]=useState(
      event.preventDefault();
      const newContact ={
        id: nanoid(),
-       idProf: addFormData.idProf,
-       idClasse: addFormData.idClasse,
-       idMat: addFormData.idMat,
-       annee: addFormData.annee,
+       teacherId: addFormData.teacherId,
+       classeId: addFormData.classeId,
+       subjectId: addFormData.subjectId,
+       schoolYear: addFormData.schoolYear,
      };
      const newContacts =[ ...contacts, newContact]
      setContacts(newContacts);
@@ -63,10 +74,10 @@ const [addFormData, setAddFromData]=useState(
      event.preventDefault();
      const editedContact ={
        id : editContactId,
-       idProf: editFormData.idProf,
-       idClasse: editFormData.idClasse,
-       idMat: editFormData.idMat,
-       annee : editFormData.annee,
+       teacherId: editFormData.teacherId,
+       classeId: editFormData.classeId,
+       subjectId: editFormData.subjectId,
+       schoolYear : editFormData.schoolYear,
      };
      const newContacts=[...contacts];
      const index= contacts.findIndex((contact)=>contact.id === editContactId);
@@ -78,10 +89,10 @@ const [addFormData, setAddFromData]=useState(
      events.preventDefault();
      setEditContactId(contact.id);
      const formValues={
-       idProf: contact.idProf,
-       idClasse: contact.idClasse,
-       idMat: contact.idMat,
-       annee: contact.annee,
+       teacherId: contact.teacherId,
+       classeId: contact.classeId,
+       subjectId: contact.subjectId,
+       schoolYear: contact.schoolYear,
      }
      setEditFormData(formValues);
    };
@@ -94,6 +105,8 @@ const [addFormData, setAddFromData]=useState(
      newContacts.splice(index,1);
      setContacts(newContacts);
    }
+
+   const [modalIsOpen, setmodalIsOpen] = useState(false) 
    
    return (
        <div style={{
@@ -123,16 +136,16 @@ const [addFormData, setAddFromData]=useState(
                            
                            
                          <td style={{width:"600px"}}>
-                           <input  style={{width:"250px" , direction:"rtl", borderColor:"orangered"}}  type="text" name="annee" required="requird" placeholder="	السنة الدراسية.."onChange={handleAddFormChange}/>
+                           <input  style={{width:"250px" , direction:"rtl", borderColor:"orangered"}}  type="text" name="schoolYear" required="requird" placeholder="	السنة الدراسية.."onChange={handleAddFormChange}/>
                          </td>
                          <td style={{width:"600px"}}>
-                           <input  style={{width:"200px", direction:"rtl", borderColor:"orangered"}}   type="text" name="idMat" required="requird" placeholder="	المادة.." onChange={handleAddFormChange} />
+                           <input  style={{width:"200px", direction:"rtl", borderColor:"orangered"}}   type="text" name="subjectId" required="requird" placeholder="	المادة.." onChange={handleAddFormChange} />
                            </td>
                            <td style={{width:"600px"}}>
-                           <input style={{width:"200px" , direction:"rtl" , borderColor:"orangered"}} type="text" name="idClasse" required="requird" placeholder=" القسم .." onChange={handleAddFormChange}/>
+                           <input style={{width:"200px" , direction:"rtl" , borderColor:"orangered"}} type="text" name="classeId" required="requird" placeholder=" القسم .." onChange={handleAddFormChange}/>
                          </td>
                          <td style={{width:"600px"}}>
-                           <input   style={{width:"200px", direction:"rtl", borderColor:"orangered"}} type="text" name="idProf" required="requird" placeholder="إسم المدرس.." onChange={handleAddFormChange}/>   
+                           <input   style={{width:"200px", direction:"rtl", borderColor:"orangered"}} type="text" name="teacherId" required="requird" placeholder="إسم المدرس.." onChange={handleAddFormChange}/>   
                            </td>
                          
                            

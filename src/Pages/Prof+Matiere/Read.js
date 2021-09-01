@@ -10,10 +10,10 @@ const Read = ({ contact, handleEditClick, handleDeleteClick }) => {
       
       
       
-      <div style={{padding:"10px" }}>{contact.idProf} : إسم المدرس</div>
-      <div style={{padding:"10px"}} >{contact.idClasse} : القسم</div>
-      <div style={{padding:"10px"}}>{contact.idMat} : المادة </div>
-      <div style={{padding:"10px"}}>{contact.annee} : 	السنة الدراسية</div>
+      <div style={{padding:"10px" }}>{contact.teacherId} : إسم المدرس</div>
+      <div style={{padding:"10px"}} >{contact.classeId} : القسم</div>
+      <div style={{padding:"10px"}}>{contact.subjectId} : المادة </div>
+      <div style={{padding:"10px"}}>{contact.schoolYear} : 	السنة الدراسية</div>
       <div >
         <button className="btn waves-effect waves-light  light-blue lighten-2"
           type="button"
