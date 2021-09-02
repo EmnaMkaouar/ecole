@@ -15,7 +15,7 @@ const Read = ({ classe }) => {
 
       <td className="center">{classe.schoolYear}</td>
 
-      <td className="center"> <Link onClick={() => setModalIsOpen(true)}>{classe.name}</Link> </td>
+      <td className="center"> <a href="#" onClick={() => setModalIsOpen(true)}>{classe.name}</a> </td>
       <Modal isOpen={modalIsOpen} shouldCloseOnEsc={false}>
         <i class="material-icons right close2" onClick={() => setModalIsOpen(false)}>close</i>
         <Liste

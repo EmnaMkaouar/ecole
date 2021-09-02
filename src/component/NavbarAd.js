@@ -10,21 +10,14 @@ class NavbarAd extends Component {
   
 componentDidMount() {
     const M = window.M;
-      document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems, {});
-      
-      
-      
-    }); 
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
     
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elem = document.querySelectorAll('.dropdown-trigger');
-        var instance = M.Dropdown.init(elem, {
-            inDuration: 300,
-            outDuration: 225,hover: true,belowOrigin: true,alignment: 'left'});
-      }); 
+    var elem = document.querySelectorAll('.dropdown-trigger');
+    var instance = M.Dropdown.init(elem, {
+        inDuration: 300,
+        outDuration: 225,hover: true,belowOrigin: true,alignment: 'left'});
     }
 
     render(){
@@ -37,7 +30,7 @@ componentDidMount() {
 </ul>
             <nav>
     <div class="nav-wrapper ">
-    <Link  data-target="slide-out" className="sidenav-trigger  show-on-large"  ><i className="material-icons menu">menu</i></Link>
+    <div  data-target="slide-out" className="sidenav-trigger  show-on-large"  ><i className="material-icons menu">menu</i></div>
     <Link to="/HomeAdmin" className="brand-logo center black-text navbar-close" > المدرسة الابتدائية الأمل</Link>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
